@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="HYGE Innovations">
+  <!-- The HYGE mark: two staggered rails joined by a rising bar. Infrastructure that connects, and moves up. -->
+  <rect width="96" height="96" rx="22" fill="#0F0F0D"/>
+  <rect x="20" y="28" width="15" height="50" rx="2.5" fill="#F5C518"/>
+  <rect x="61" y="18" width="15" height="50" rx="2.5" fill="#F5C518"/>
+  <path d="M35 52 L61 38 L61 52 L35 66 Z" fill="#F5C518"/>
+</svg>

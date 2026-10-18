@@ -3,799 +3,358 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HYGE Innovations Limited — Building Africa's Infrastructure</title>
-<meta name="description" content="HYGE Innovations Limited is a Lagos-based venture builder creating the mobility, financial and digital infrastructure Africa runs on. Parent company of Wheelers.">
+<title>HYGE Innovations — We build what Africa moves on</title>
+<meta name="description" content="HYGE Innovations Limited is a Lagos venture builder creating the mobility, payments and digital infrastructure Africa runs on. Parent company of Wheelers.">
 <meta name="facebook-domain-verification" content="fn9ovqquwsizki08v0gvlgol6jzwbm"/>
+<meta name="theme-color" content="#F5C518">
+<meta property="og:title" content="HYGE Innovations — We build what Africa moves on">
+<meta property="og:description" content="A Lagos venture builder. Venture 001: Wheelers, ride-hailing for Lagos.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="assets/hyge-mark.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#f4efe6;
-    --ink-dim:#b9b0a1;
-    --void:#0c0b09;
-    --void-2:#141210;
-    --panel:#18150f;
-    --line:rgba(244,239,230,0.12);
-    --amber:#e8892f;
-    --amber-dim:#8c5320;
-    --rust:#c1541f;
-    --moss:#5c6b4f;
-    --serif:'Fraunces', serif;
-    --sans:'IBM Plex Sans', sans-serif;
-    --mono:'IBM Plex Mono', monospace;
+    --paper:#F3EFE6;
+    --paper-2:#ECE6DA;
+    --ink:#0F0F0D;
+    --ink-2:#1B1A17;
+    --muted:#5E5A52;
+    --line:rgba(15,15,13,.14);
+    --yellow:#F5C518;
+    --yellow-deep:#E0B000;
+    --on-ink:#F3EFE6;
+    --on-ink-muted:#A9A398;
+    --display:'Archivo', 'Arial Black', sans-serif;
+    --text:'Instrument Sans', system-ui, sans-serif;
+    --mono:'JetBrains Mono', ui-monospace, monospace;
+    --gutter:clamp(20px, 5vw, 56px);
   }
-
   *{margin:0;padding:0;box-sizing:border-box;}
-
   html{scroll-behavior:smooth;}
-
-  body{
-    background:var(--void);
-    color:var(--ink);
-    font-family:var(--sans);
-    overflow-x:hidden;
-    position:relative;
-  }
-
-  /* grain overlay */
-  body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    z-index:999;
-    pointer-events:none;
-    opacity:0.05;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-
-  ::selection{background:var(--amber);color:var(--void);}
-
+  body{background:var(--paper);color:var(--ink);font-family:var(--text);font-size:17px;line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
   a{color:inherit;text-decoration:none;}
+  ::selection{background:var(--yellow);color:var(--ink);}
+  :focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px;}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 var(--gutter);}
 
-  .wrap{
-    max-width:1240px;
-    margin:0 auto;
-    padding:0 40px;
-  }
+  /* paper grain */
+  body::before{content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.35;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.32 0 0 0 0 0.27 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
 
-  /* ---------- NAV ---------- */
-  nav{
-    position:fixed;
-    top:0; left:0; right:0;
-    z-index:100;
-    padding:26px 0;
-    background:linear-gradient(to bottom, rgba(12,11,9,0.92), rgba(12,11,9,0));
-    backdrop-filter:blur(2px);
-  }
-  nav .wrap{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-  }
-  .logo-mark{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-family:var(--mono);
-    font-size:13px;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--ink);
-  }
-  .logo-mark .dot{
-    width:7px;height:7px;border-radius:50%;
-    background:var(--amber);
-    box-shadow:0 0 12px var(--amber);
-  }
-  .nav-links{
-    display:flex;
-    gap:36px;
-    font-size:13px;
-    letter-spacing:0.05em;
-    text-transform:uppercase;
-    color:var(--ink-dim);
-  }
-  .nav-links a{
-    position:relative;
-    padding-bottom:4px;
-    transition:color 0.25s;
-  }
-  .nav-links a:hover{color:var(--ink);}
-  .nav-links a::after{
-    content:"";
-    position:absolute;
-    bottom:0; left:0;
-    width:0%; height:1px;
-    background:var(--amber);
-    transition:width 0.3s ease;
-  }
-  .nav-links a:hover::after{width:100%;}
+  .mono{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;}
 
-  @media (max-width:720px){ .nav-links{display:none;} }
+  /* ── nav ── */
+  nav{position:sticky;top:0;z-index:50;background:rgba(243,239,230,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand img{width:40px;height:40px;display:block;}
+  .brand-text{display:flex;flex-direction:column;line-height:1;}
+  .brand-name{font-family:var(--display);font-weight:900;font-stretch:125%;font-size:21px;letter-spacing:.02em;}
+  .brand-sub{font-family:var(--mono);font-size:9.5px;letter-spacing:.32em;margin-top:4px;color:var(--muted);}
+  .nav-links{display:flex;align-items:center;gap:34px;font-size:15px;font-weight:500;}
+  .nav-links a:not(.btn){position:relative;}
+  .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:3px;background:var(--yellow);transform:scaleX(0);transform-origin:left;transition:transform .25s ease;}
+  .nav-links a:not(.btn):hover::after{transform:scaleX(1);}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:48px;padding:0 22px;border-radius:999px;font-weight:600;font-size:15px;border:2px solid var(--ink);transition:transform .15s ease, background .2s ease, color .2s ease;white-space:nowrap;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-ink{background:var(--ink);color:var(--paper);}
+  .btn-ink:hover{background:var(--yellow);color:var(--ink);}
+  .btn-line{background:transparent;}
+  .btn-line:hover{background:var(--ink);color:var(--paper);}
+  .btn-yellow{background:var(--yellow);border-color:var(--yellow);color:var(--ink);}
+  .btn-yellow:hover{background:var(--paper);border-color:var(--paper);}
+  .btn .arrow{transition:transform .2s ease;}
+  .btn:hover .arrow{transform:translateX(4px);}
+  @media (max-width:820px){ .nav-links a:not(.btn){display:none;} .nav-links{gap:0;} }
 
-  /* ---------- HERO ---------- */
-  header.hero{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    position:relative;
-    padding-top:120px;
-    padding-bottom:80px;
-  }
+  /* ── hero ── */
+  .hero{position:relative;padding:clamp(56px,9vw,120px) 0 0;overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:clamp(24px,5vw,72px);align-items:end;}
+  .kicker{display:inline-flex;align-items:center;gap:12px;margin-bottom:28px;color:var(--muted);}
+  .kicker .live{width:9px;height:9px;border-radius:50%;background:#1E9E5A;box-shadow:0 0 0 0 rgba(30,158,90,.5);animation:ping 2s infinite;}
+  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(30,158,90,.45);}80%,100%{box-shadow:0 0 0 12px rgba(30,158,90,0);}}
+  h1{font-family:var(--display);font-weight:900;font-stretch:118%;font-size:clamp(46px,8.6vw,128px);line-height:.9;letter-spacing:-.025em;text-transform:uppercase;}
+  h1 .hl{position:relative;display:inline-block;z-index:0;}
+  h1 .hl::before{content:"";position:absolute;z-index:-1;left:-.08em;right:-.08em;top:.12em;bottom:.02em;background:var(--yellow);transform:skewX(-8deg) scaleX(0);transform-origin:left;animation:mark .7s cubic-bezier(.2,.8,.2,1) .9s forwards;}
+  @keyframes mark{to{transform:skewX(-8deg) scaleX(1);}}
+  .hero-lede{margin-top:34px;max-width:560px;font-size:clamp(17px,1.6vw,20px);line-height:1.6;color:var(--muted);}
+  .hero-lede strong{color:var(--ink);font-weight:600;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px;}
+  .hero-mark{justify-self:end;width:min(100%,360px);aspect-ratio:1;position:relative;}
+  .hero-mark img{width:100%;height:100%;display:block;filter:drop-shadow(0 30px 40px rgba(15,15,13,.18));animation:float 7s ease-in-out infinite;}
+  @keyframes float{0%,100%{transform:translateY(0) rotate(-2deg);}50%{transform:translateY(-12px) rotate(1deg);}}
+  .hero-mark .tag{position:absolute;left:-18px;bottom:22px;background:var(--ink);color:var(--paper);padding:10px 14px;border-radius:12px;transform:rotate(-4deg);}
+  @media (max-width:860px){ .hero-grid{grid-template-columns:1fr;} .hero-mark{justify-self:start;width:180px;order:-1;} .hero-mark .tag{display:none;} }
 
-  header.hero::after{
-    content:"";
-    position:absolute;
-    top:0; right:-10%;
-    width:60%;
-    height:100%;
-    background:radial-gradient(ellipse at top right, rgba(232,137,47,0.14), transparent 60%);
-    pointer-events:none;
-  }
+  .rise{opacity:0;transform:translateY(24px);animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards;}
+  .d1{animation-delay:.05s}.d2{animation-delay:.2s}.d3{animation-delay:.35s}.d4{animation-delay:.5s}
+  @keyframes rise{to{opacity:1;transform:none;}}
 
-  .eyebrow{
-    font-family:var(--mono);
-    font-size:12px;
-    letter-spacing:0.22em;
-    text-transform:uppercase;
-    color:var(--amber);
-    display:flex;
-    align-items:center;
-    gap:12px;
-    margin-bottom:28px;
-    opacity:0;
-    animation:rise 0.9s ease 0.1s forwards;
-  }
-  .eyebrow::before{
-    content:"";
-    width:32px; height:1px;
-    background:var(--amber);
-  }
+  /* the danfo stripe: the yellow-and-black band of a Lagos bus, carrying the facts */
+  .danfo{margin-top:clamp(56px,8vw,96px);background:var(--yellow);border-top:6px solid var(--ink);border-bottom:6px solid var(--ink);position:relative;overflow:hidden;}
+  .danfo::before,.danfo::after{content:"";position:absolute;left:0;right:0;height:4px;background:var(--ink);}
+  .danfo::before{top:6px;} .danfo::after{bottom:6px;}
+  .ticker{display:flex;width:max-content;animation:roll 38s linear infinite;padding:22px 0;}
+  .ticker span{font-family:var(--display);font-weight:800;font-stretch:125%;font-size:clamp(16px,2vw,22px);text-transform:uppercase;letter-spacing:.04em;padding:0 28px;white-space:nowrap;display:flex;align-items:center;gap:28px;}
+  .ticker span::after{content:"";width:12px;height:12px;background:var(--ink);transform:rotate(45deg);}
+  @keyframes roll{to{transform:translateX(-50%);}}
 
-  h1.display{
-    font-family:var(--serif);
-    font-weight:400;
-    font-size:clamp(46px, 8vw, 108px);
-    line-height:0.98;
-    letter-spacing:-0.02em;
-    max-width:1000px;
-    opacity:0;
-    animation:rise 1s ease 0.25s forwards;
-  }
-  h1.display em{
-    font-style:italic;
-    font-weight:400;
-    color:var(--amber);
-  }
+  /* ── sections ── */
+  section{padding:clamp(80px,11vw,150px) 0;position:relative;}
+  .label{display:flex;align-items:center;gap:14px;margin-bottom:26px;color:var(--muted);}
+  .label b{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--yellow);font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:0;}
+  h2{font-family:var(--display);font-weight:850;font-stretch:112%;font-size:clamp(34px,5vw,68px);line-height:.98;letter-spacing:-.02em;max-width:980px;}
+  h2 em{font-style:normal;background:linear-gradient(transparent 58%, var(--yellow) 58%, var(--yellow) 92%, transparent 92%);padding:0 .06em;}
 
-  .hero-sub{
-    max-width:520px;
-    margin-top:34px;
-    font-size:17px;
-    line-height:1.7;
-    color:var(--ink-dim);
-    font-weight:300;
-    opacity:0;
-    animation:rise 1s ease 0.4s forwards;
-  }
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1);}
+  .reveal.in{opacity:1;transform:none;}
 
-  .hero-actions{
-    margin-top:44px;
-    display:flex;
-    gap:16px;
-    flex-wrap:wrap;
-    opacity:0;
-    animation:rise 1s ease 0.55s forwards;
-  }
+  /* thesis */
+  .thesis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:64px;}
+  .t-card{position:relative;padding:34px 30px 32px;border:2px solid var(--ink);border-radius:26px;background:var(--paper);transition:transform .25s ease, box-shadow .25s ease;}
+  .t-card:hover{transform:translate(-4px,-4px);box-shadow:8px 8px 0 var(--ink);}
+  .t-card .num{font-family:var(--display);font-weight:900;font-stretch:125%;font-size:72px;line-height:1;color:var(--yellow);-webkit-text-stroke:2px var(--ink);}
+  .t-card h3{font-family:var(--display);font-weight:800;font-stretch:108%;font-size:24px;line-height:1.1;margin:22px 0 12px;}
+  .t-card p{color:var(--muted);font-size:16px;}
+  @media (max-width:900px){ .thesis{grid-template-columns:1fr;} }
 
-  .btn{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    padding:15px 26px;
-    font-size:13px;
-    letter-spacing:0.06em;
-    text-transform:uppercase;
-    font-weight:500;
-    border-radius:2px;
-    transition:all 0.3s ease;
-  }
-  .btn-solid{
-    background:var(--amber);
-    color:var(--void);
-  }
-  .btn-solid:hover{
-    background:var(--ink);
-    transform:translateY(-2px);
-  }
-  .btn-ghost{
-    border:1px solid var(--line);
-    color:var(--ink);
-  }
-  .btn-ghost:hover{
-    border-color:var(--amber);
-    color:var(--amber);
-  }
+  /* ventures */
+  .ventures{background:var(--ink);color:var(--on-ink);border-radius:clamp(28px,4vw,48px);margin:0 clamp(8px,1.5vw,20px);}
+  .ventures .label{color:var(--on-ink-muted);}
+  .ventures .label b{background:var(--yellow);color:var(--ink);}
+  .ventures h2 em{background:none;color:var(--yellow);}
+  .venture{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);margin-top:64px;border-radius:30px;overflow:hidden;background:var(--ink-2);border:1px solid rgba(243,239,230,.12);}
+  .venture-art{position:relative;min-height:420px;padding:40px;display:flex;flex-direction:column;justify-content:space-between;background:#FF7700;overflow:hidden;}
+  .venture-art::after{content:"";position:absolute;inset:auto -20% -30% -20%;height:70%;background:repeating-linear-gradient(-12deg, rgba(15,15,13,.0) 0 26px, rgba(15,15,13,.09) 26px 30px);}
+  .venture-art .status{position:relative;z-index:1;align-self:flex-start;display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;background:var(--ink);color:var(--paper);}
+  .venture-art .status i{width:8px;height:8px;border-radius:50%;background:#3BD07F;}
+  .venture-art .wmark{position:relative;z-index:1;display:flex;align-items:center;gap:16px;}
+  .venture-art .wmark svg{width:76px;height:76px;flex:none;}
+  .venture-art .wmark span{font-family:var(--display);font-weight:900;font-stretch:110%;font-size:clamp(40px,5vw,60px);letter-spacing:-.02em;color:#FEFAEF;}
+  .venture-body{padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;justify-content:center;gap:22px;}
+  .venture-body .tag{color:var(--on-ink-muted);}
+  .venture-body h3{font-family:var(--display);font-weight:800;font-stretch:108%;font-size:clamp(28px,3vw,40px);line-height:1.05;}
+  .venture-body p{color:#CFC8BB;font-size:17px;max-width:540px;}
+  .facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
+  .fact{padding:16px;border-radius:18px;background:rgba(243,239,230,.06);border:1px solid rgba(243,239,230,.1);}
+  .fact b{display:block;font-family:var(--display);font-weight:800;font-size:19px;color:var(--yellow);line-height:1.15;}
+  .fact span{display:block;margin-top:6px;font-size:13px;color:var(--on-ink-muted);line-height:1.4;}
+  .venture-body .btn{align-self:flex-start;}
+  .next{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px;}
+  .next-card{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:26px 30px;border-radius:24px;border:1px dashed rgba(243,239,230,.28);}
+  .next-card strong{font-family:var(--display);font-weight:800;font-stretch:115%;font-size:22px;color:var(--on-ink);}
+  .next-card span{padding:6px 12px;border-radius:999px;background:rgba(245,197,24,.14);color:var(--yellow);white-space:nowrap;font-size:11px;}
+  .next-card strong{white-space:nowrap;}
+  @media (max-width:900px){ .venture{grid-template-columns:1fr;} .venture-art{min-height:260px;} .next{grid-template-columns:1fr;} }
+  @media (max-width:520px){ .facts{grid-template-columns:1fr;} .next-card{padding:22px;} .venture-art{padding:28px;} .venture-art .wmark svg{width:52px;height:52px;} .venture-art .wmark span{font-size:34px;} }
 
-  @keyframes rise{
-    from{opacity:0; transform:translateY(22px);}
-    to{opacity:1; transform:translateY(0);}
-  }
+  /* how we build */
+  .how{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,80px);align-items:start;}
+  .how h2{position:sticky;top:110px;}
+  .rows{border-top:2px solid var(--ink);}
+  .row{display:grid;grid-template-columns:70px minmax(0,1fr);gap:20px;padding:30px 0;border-bottom:1px solid var(--line);}
+  .row .idx{font-family:var(--display);font-weight:900;font-stretch:125%;font-size:28px;line-height:1;}
+  .row h3{font-family:var(--display);font-weight:800;font-stretch:105%;font-size:23px;line-height:1.15;margin-bottom:8px;}
+  .row p{color:var(--muted);font-size:16.5px;max-width:600px;}
+  @media (max-width:900px){ .how{grid-template-columns:1fr;} .how h2{position:static;} .row{grid-template-columns:52px minmax(0,1fr);} }
 
-  .hero-meta{
-    position:absolute;
-    bottom:48px;
-    right:40px;
-    display:flex;
-    gap:56px;
-    opacity:0;
-    animation:rise 1s ease 0.7s forwards;
-  }
-  .hero-meta div{ text-align:left; }
-  .hero-meta .num{
-    font-family:var(--serif);
-    font-size:34px;
-    color:var(--amber);
-  }
-  .hero-meta .label{
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    color:var(--ink-dim);
-    margin-top:4px;
-  }
-  @media (max-width:900px){ .hero-meta{position:static; margin-top:60px;} }
+  /* contact */
+  .contact{background:var(--yellow);border-top:6px solid var(--ink);position:relative;overflow:hidden;}
+  .contact::after{content:"";position:absolute;right:-6%;bottom:-24%;width:min(46vw,560px);aspect-ratio:1;background:url("assets/hyge-mark-dark.svg") center/contain no-repeat;opacity:.08;transform:rotate(-10deg);pointer-events:none;}
+  .contact .label{color:var(--ink);}
+  .contact h2{max-width:900px;}
+  .contact .lede{margin-top:24px;max-width:560px;font-size:19px;}
+  .contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:48px;position:relative;z-index:1;}
+  .c-card{padding:24px;border-radius:22px;background:var(--paper);border:2px solid var(--ink);display:flex;flex-direction:column;gap:8px;transition:transform .2s ease, box-shadow .2s ease;}
+  a.c-card:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--ink);}
+  .c-card .mono{color:var(--muted);}
+  .c-card strong{font-family:var(--display);font-weight:800;font-size:19px;line-height:1.25;overflow-wrap:anywhere;}
+  @media (max-width:900px){ .contact-grid{grid-template-columns:1fr;} }
 
-  /* ---------- SECTION LABEL ---------- */
-  .section-label{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    font-family:var(--mono);
-    font-size:12px;
-    letter-spacing:0.2em;
-    text-transform:uppercase;
-    color:var(--amber);
-    margin-bottom:20px;
-  }
-  .section-label .idx{ color:var(--ink-dim); }
-  .section-label::after{
-    content:"";
-    flex:1;
-    height:1px;
-    background:var(--line);
-  }
+  /* footer */
+  footer{background:var(--ink);color:var(--on-ink);padding:64px 0 36px;}
+  .foot-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:44px;border-bottom:1px solid rgba(243,239,230,.12);}
+  footer .brand-sub{color:var(--on-ink-muted);}
+  .foot-blurb{margin-top:18px;max-width:340px;color:var(--on-ink-muted);font-size:15px;}
+  .foot-cols{display:flex;gap:64px;flex-wrap:wrap;}
+  .foot-col h4{color:var(--yellow);margin-bottom:16px;font-weight:500;}
+  .foot-col a,.foot-col span{display:block;margin-bottom:10px;font-size:15px;color:#D8D2C6;}
+  .foot-col a:hover{color:var(--yellow);}
+  .foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:26px;color:var(--on-ink-muted);}
 
-  section{
-    padding:130px 0;
-    position:relative;
-    border-top:1px solid var(--line);
-  }
-
-  .section-title{
-    font-family:var(--serif);
-    font-weight:400;
-    font-size:clamp(30px, 4vw, 52px);
-    max-width:760px;
-    line-height:1.15;
-    letter-spacing:-0.01em;
-  }
-  .section-title em{ font-style:italic; color:var(--amber); }
-
-  /* ---------- THESIS ---------- */
-  .thesis-grid{
-    margin-top:70px;
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
-  }
-  .thesis-card{
-    background:var(--void);
-    padding:44px 36px;
-    transition:background 0.3s ease;
-  }
-  .thesis-card:hover{ background:var(--panel); }
-  .thesis-card .n{
-    font-family:var(--mono);
-    font-size:12px;
-    color:var(--amber-dim);
-    margin-bottom:24px;
-  }
-  .thesis-card h3{
-    font-family:var(--serif);
-    font-weight:500;
-    font-size:23px;
-    margin-bottom:14px;
-  }
-  .thesis-card p{
-    color:var(--ink-dim);
-    font-size:14.5px;
-    line-height:1.7;
-    font-weight:300;
-  }
-  @media (max-width:840px){
-    .thesis-grid{ grid-template-columns:1fr; }
-  }
-
-  /* ---------- VENTURES ---------- */
-  .venture-card{
-    margin-top:60px;
-    display:grid;
-    grid-template-columns:0.9fr 1.1fr;
-    gap:0;
-    border:1px solid var(--line);
-    background:var(--panel);
-    position:relative;
-    overflow:hidden;
-  }
-  .venture-visual{
-    background:
-      radial-gradient(circle at 30% 20%, rgba(232,137,47,0.25), transparent 55%),
-      linear-gradient(160deg, #1a1712 0%, #0c0b09 100%);
-    padding:56px;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    min-height:420px;
-    position:relative;
-  }
-  .venture-visual .wordmark{
-    font-family:var(--serif);
-    font-style:italic;
-    font-size:56px;
-    color:var(--ink);
-  }
-  .venture-visual .status{
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--amber);
-    display:flex;
-    align-items:center;
-    gap:8px;
-  }
-  .venture-visual .status .dot{
-    width:6px;height:6px;border-radius:50%;
-    background:var(--amber);
-    box-shadow:0 0 10px var(--amber);
-    animation:pulse 2s infinite;
-  }
-  @keyframes pulse{
-    0%,100%{opacity:1;} 50%{opacity:0.35;}
-  }
-
-  .venture-body{
-    padding:56px 60px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-  }
-  .venture-tag{
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--ink-dim);
-    margin-bottom:18px;
-  }
-  .venture-body h3{
-    font-family:var(--serif);
-    font-size:38px;
-    font-weight:400;
-    margin-bottom:18px;
-  }
-  .venture-body p{
-    color:var(--ink-dim);
-    font-size:15.5px;
-    line-height:1.75;
-    font-weight:300;
-    max-width:480px;
-    margin-bottom:30px;
-  }
-  .venture-stats{
-    display:flex;
-    gap:40px;
-    margin-bottom:34px;
-  }
-  .venture-stats div .v{
-    font-family:var(--serif);
-    font-size:24px;
-    color:var(--amber);
-  }
-  .venture-stats div .k{
-    font-family:var(--mono);
-    font-size:10.5px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--ink-dim);
-    margin-top:2px;
-  }
-  .venture-link{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    font-size:13px;
-    letter-spacing:0.05em;
-    text-transform:uppercase;
-    font-weight:500;
-    color:var(--ink);
-    width:fit-content;
-    padding-bottom:6px;
-    border-bottom:1px solid var(--amber);
-    transition:gap 0.3s ease, color 0.3s ease;
-  }
-  .venture-link:hover{ gap:16px; color:var(--amber); }
-
-  @media (max-width:860px){
-    .venture-card{ grid-template-columns:1fr; }
-    .venture-visual{ min-height:260px; }
-    .venture-body{ padding:44px 32px; }
-  }
-
-  /* next venture teaser row */
-  .next-ventures{
-    margin-top:1px;
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    border:1px solid var(--line);
-    border-top:none;
-  }
-  .next-card{
-    padding:36px 40px;
-    border-right:1px solid var(--line);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-  }
-  .next-card:last-child{ border-right:none; }
-  .next-card .name{
-    font-family:var(--serif);
-    font-style:italic;
-    font-size:20px;
-    color:var(--ink-dim);
-  }
-  .next-card .tag{
-    font-family:var(--mono);
-    font-size:10px;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    color:var(--ink-dim);
-    border:1px solid var(--line);
-    padding:5px 10px;
-    border-radius:20px;
-  }
-  @media (max-width:700px){
-    .next-ventures{ grid-template-columns:1fr; }
-    .next-card{ border-right:none; border-bottom:1px solid var(--line); }
-  }
-
-  /* ---------- MANIFESTO / APPROACH ---------- */
-  .manifesto{
-    display:grid;
-    grid-template-columns:0.5fr 1.5fr;
-    gap:60px;
-  }
-  .manifesto-list{
-    margin-top:50px;
-    display:flex;
-    flex-direction:column;
-  }
-  .manifesto-row{
-    display:grid;
-    grid-template-columns:60px 1fr;
-    gap:26px;
-    padding:30px 0;
-    border-top:1px solid var(--line);
-    align-items:baseline;
-  }
-  .manifesto-list .manifesto-row:last-child{ border-bottom:1px solid var(--line); }
-  .manifesto-row .idx{
-    font-family:var(--mono);
-    font-size:13px;
-    color:var(--amber);
-  }
-  .manifesto-row h4{
-    font-family:var(--serif);
-    font-weight:500;
-    font-size:22px;
-    margin-bottom:8px;
-  }
-  .manifesto-row p{
-    color:var(--ink-dim);
-    font-size:14.5px;
-    line-height:1.7;
-    font-weight:300;
-    max-width:560px;
-  }
-  @media (max-width:860px){
-    .manifesto{ grid-template-columns:1fr; }
-  }
-
-  /* ---------- CONTACT / CTA ---------- */
-  .cta-section{
-    text-align:center;
-    padding:150px 0;
-  }
-  .cta-section .section-title{
-    margin:0 auto;
-    text-align:center;
-  }
-  .cta-section p.lead{
-    max-width:480px;
-    margin:26px auto 40px;
-    color:var(--ink-dim);
-    font-size:15.5px;
-    line-height:1.7;
-    font-weight:300;
-  }
-  .cta-actions{
-    display:flex;
-    justify-content:center;
-    gap:16px;
-    flex-wrap:wrap;
-  }
-
-  /* ---------- FOOTER ---------- */
-  footer{
-    border-top:1px solid var(--line);
-    padding:60px 0 40px;
-  }
-  .footer-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    flex-wrap:wrap;
-    gap:40px;
-    padding-bottom:50px;
-    border-bottom:1px solid var(--line);
-  }
-  .footer-brand .logo-mark{ margin-bottom:16px; }
-  .footer-brand p{
-    color:var(--ink-dim);
-    font-size:14px;
-    max-width:320px;
-    line-height:1.7;
-    font-weight:300;
-  }
-  .footer-cols{
-    display:flex;
-    gap:70px;
-    flex-wrap:wrap;
-  }
-  .footer-col h5{
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:0.12em;
-    text-transform:uppercase;
-    color:var(--amber);
-    margin-bottom:18px;
-  }
-  .footer-col a, .footer-col span{
-    display:block;
-    font-size:14px;
-    line-height:1.6;
-    color:var(--ink-dim);
-    margin-bottom:12px;
-    transition:color 0.25s;
-  }
-  .footer-col a:hover{ color:var(--ink); }
-  .footer-bottom{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding-top:30px;
-    flex-wrap:wrap;
-    gap:14px;
-    font-family:var(--mono);
-    font-size:11.5px;
-    color:var(--ink-dim);
-    letter-spacing:0.02em;
-  }
-
-  @media (max-width:600px){
-    .wrap{ padding:0 22px; }
-    section{ padding:90px 0; }
-    .venture-body{ padding:36px 24px; }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important;}
+    .rise,.reveal{opacity:1;transform:none;}
+    h1 .hl::before{transform:skewX(-8deg) scaleX(1);}
   }
 </style>
 </head>
 <body>
 
-<nav>
+<nav aria-label="Main">
   <div class="wrap">
-    <div class="logo-mark"><span class="dot"></span>HYGE INNOVATIONS LTD</div>
+    <a class="brand" href="#top" aria-label="HYGE Innovations home">
+      <img src="assets/hyge-mark.svg" alt="">
+      <span class="brand-text"><span class="brand-name">HYGE</span><span class="brand-sub">INNOVATIONS</span></span>
+    </a>
     <div class="nav-links">
       <a href="#ventures">Ventures</a>
-      <a href="#approach">Approach</a>
-      <a href="#contact">Contact</a>
+      <a href="#thesis">Thesis</a>
+      <a href="#how">How we build</a>
+      <a class="btn btn-ink" href="#contact">Talk to us <span class="arrow" aria-hidden="true">→</span></a>
     </div>
   </div>
 </nav>
 
-<header class="hero">
-  <div class="wrap">
-    <div class="eyebrow">Lagos, Nigeria — Est. 2026</div>
-    <h1 class="display">We build the<br>infrastructure <em>Africa</em><br>moves on.</h1>
-    <p class="hero-sub">HYGE Innovations Limited is a venture-building company. We conceive, fund, and operate technology companies solving Africa's hardest infrastructure problems — starting with how a continent of over a billion people gets from one place to another.</p>
-    <div class="hero-actions">
-      <a href="#ventures" class="btn btn-solid">View our ventures</a>
-      <a href="https://www.wheelersng.com/" target="_blank" rel="noopener" class="btn btn-ghost">Visit Wheelers →</a>
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="kicker mono rise d1"><span class="live" aria-hidden="true"></span>Lagos, Nigeria · Venture builder</p>
+      <h1 class="rise d2">We build what <span class="hl">Africa</span> moves on.</h1>
+      <p class="hero-lede rise d3">HYGE Innovations conceives, builds and runs technology companies for Africa's everyday infrastructure. <strong>We started with how Lagos gets around.</strong></p>
+      <div class="hero-actions rise d4">
+        <a class="btn btn-ink" href="#ventures">See our ventures <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn-line" href="https://www.wheelersng.com/" target="_blank" rel="noopener">Visit Wheelers</a>
+      </div>
+    </div>
+    <div class="hero-mark rise d3" aria-hidden="true">
+      <img src="assets/hyge-mark.svg" alt="">
+      <span class="tag mono">Est. 2026 · Lagos</span>
     </div>
   </div>
-  <div class="hero-meta">
-    <div>
-      <div class="num">01</div>
-      <div class="label">Active venture</div>
-    </div>
-    <div>
-      <div class="num">NG</div>
-      <div class="label">Headquartered</div>
-    </div>
-    <div>
-      <div class="num">∞</div>
-      <div class="label">Building ahead</div>
+
+  <div class="danfo" aria-label="HYGE at a glance">
+    <div class="ticker">
+      <span>Venture 001 · Wheelers · Live in Lagos</span><span>Built in Lagos, for Africa</span><span>Mobility · Payments · Digital rails</span><span>RC 9626054</span>
+      <span aria-hidden="true">Venture 001 · Wheelers · Live in Lagos</span><span aria-hidden="true">Built in Lagos, for Africa</span><span aria-hidden="true">Mobility · Payments · Digital rails</span><span aria-hidden="true">RC 9626054</span>
     </div>
   </div>
 </header>
 
-<section id="approach">
+<section id="thesis">
   <div class="wrap">
-    <div class="section-label"><span class="idx">01</span> Thesis</div>
-    <h2 class="section-title">Africa's next generation of infrastructure will be built <em>from</em> Africa, not around it.</h2>
-
-    <div class="thesis-grid">
-      <div class="thesis-card">
-        <div class="n">/ 01</div>
+    <p class="label mono reveal"><b>01</b>Thesis</p>
+    <h2 class="reveal">Africa's next infrastructure will be built <em>from</em> Africa, not around it.</h2>
+    <div class="thesis">
+      <article class="t-card reveal">
+        <div class="num">01</div>
         <h3>Own the rails</h3>
-        <p>We don't rent infrastructure from foreign platforms. Every venture we build owns its core rails — payments, logistics, identity — from day one.</p>
-      </div>
-      <div class="thesis-card">
-        <div class="n">/ 02</div>
-        <h3>Build for the informal economy</h3>
-        <p>The largest market on the continent runs outside formal systems. We design products that meet that reality instead of fighting it.</p>
-      </div>
-      <div class="thesis-card">
-        <div class="n">/ 03</div>
+        <p>Every venture owns its core: payments, logistics, identity. We don't rent the parts that matter from someone else's platform.</p>
+      </article>
+      <article class="t-card reveal">
+        <div class="num">02</div>
+        <h3>Build for how people really live</h3>
+        <p>Most of the economy runs on cash, WhatsApp and trust. We build products that meet that reality instead of fighting it.</p>
+      </article>
+      <article class="t-card reveal">
+        <div class="num">03</div>
         <h3>Operate, don't just fund</h3>
-        <p>We're not a passive holding company. Our team writes the code, ships the product, and sits in the room for every major decision our ventures make.</p>
-      </div>
+        <p>We write the code, ship the product and stay in the room for every big decision our ventures make.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<section id="ventures">
+<section id="ventures" class="ventures">
   <div class="wrap">
-    <div class="section-label"><span class="idx">02</span> Portfolio</div>
-    <h2 class="section-title">One venture live. More <em>in motion.</em></h2>
+    <p class="label mono reveal"><b>02</b>Ventures</p>
+    <h2 class="reveal">One venture live. More <em>in motion</em>.</h2>
 
-    <div class="venture-card">
-      <div class="venture-visual">
-        <div class="status"><span class="dot"></span>Live in Lagos</div>
-        <div class="wordmark">Wheelers</div>
+    <article class="venture reveal">
+      <div class="venture-art">
+        <span class="status mono"><i aria-hidden="true"></i>Live in Lagos</span>
+        <div class="wmark">
+          <svg viewBox="0 0 83 83" aria-hidden="true"><rect width="82.1161" height="82.1161" rx="16" fill="#0D0D0D"/><path d="M48.1453 10.712C55.4632 10.6823 63.0012 10.6475 70.3102 10.7158C70.3425 14.5644 69.819 20.9519 69.414 24.7845C68.29 35.4206 65.0334 61.6465 57.1527 69.1636C55.9543 70.3069 54.1021 71.529 52.1862 71.6441C51.0682 71.712 50.0534 71.3748 49.2163 70.788C44.8701 67.7427 43.7239 58.0597 43.3432 53.5894C43.0982 54.878 42.9843 56.1865 42.7604 57.4792C42.1116 61.2236 40.8286 66.7673 37.8116 69.6735C36.9608 70.4926 35.8496 71.1383 34.4932 71.2219C32.8028 71.3254 31.1915 70.5331 29.9485 69.6818C28.2278 68.5035 26.8756 67.0395 25.7523 65.4678C17.4396 53.8334 13.1833 24.2477 11.8042 10.5071C19.7275 10.4106 28.0154 10.5036 35.9579 10.5048L33.8437 51.2213L33.2895 61.1681C33.2117 62.5438 33.054 64.11 33.0973 65.4808C33.106 65.755 33.2493 65.9071 33.4972 66.0607C33.8241 66.0757 34.0237 65.9873 34.122 65.718C36.0987 60.2969 37.1336 54.2556 38.0324 48.6728C39.2915 40.4598 40.289 32.2215 41.0236 23.9666C41.2161 22.0475 41.3849 20.1269 41.5299 18.205C41.6071 17.2019 41.5805 13.8985 42.4905 13.3078C43.2328 13.1019 43.6119 13.637 43.7041 14.1503C43.9854 15.7175 44.1943 17.2963 44.422 18.8695L45.6615 27.4075L49.5476 54.5675C49.6724 55.4544 50.3389 61.4347 50.6468 61.7905C50.776 61.9399 50.899 61.9947 51.1158 62.0317C51.1967 62.0091 51.3164 61.992 51.3729 61.9406C51.9271 61.4313 51.6494 57.8692 51.6354 57.0905C51.3506 46.4589 50.6426 35.8376 49.5124 25.243C49.3139 23.8255 49.195 22.2791 49.0402 20.8488L48.1453 10.712Z" fill="#FF7700"/></svg>
+          <span>Wheelers</span>
+        </div>
       </div>
       <div class="venture-body">
-        <div class="venture-tag">Venture 001 — Mobility</div>
-        <h3>Wheelers</h3>
-        <p>A ride-hailing platform rebuilt from the ground up for Nigeria — fixed fares with no surge surprises, a 30-second match guarantee, and a driver-first economics model with no middleman cut. Riders and drivers both own a piece of the network they power.</p>
-        <div class="venture-stats">
-          <div>
-            <div class="v">30s</div>
-            <div class="k">Match guarantee</div>
-          </div>
-          <div>
-            <div class="v">0%</div>
-            <div class="k">Hidden surge fees</div>
-          </div>
-          <div>
-            <div class="v">NGN</div>
-            <div class="k">↔ USDT rails</div>
-          </div>
+        <p class="tag mono">Venture 001 · Mobility</p>
+        <h3>Ride-hailing, rebuilt for Lagos.</h3>
+        <p>Riders name their price and nearby drivers answer with offers, so every fare is agreed before the trip starts. Book in the Wheelers app or straight from WhatsApp, pay from your wallet or in cash, and follow the ride live.</p>
+        <div class="facts">
+          <div class="fact"><b>You set the price</b><span>Drivers make offers, you choose</span></div>
+          <div class="fact"><b>App + WhatsApp</b><span>Two ways to book</span></div>
+          <div class="fact"><b>Lagos</b><span>Live today</span></div>
         </div>
-        <a href="https://www.wheelersng.com/" target="_blank" rel="noopener" class="venture-link">Visit wheelersng.com →</a>
+        <a class="btn btn-yellow" href="https://www.wheelersng.com/" target="_blank" rel="noopener">Visit wheelersng.com <span class="arrow" aria-hidden="true">→</span></a>
       </div>
-    </div>
+    </article>
 
-    <div class="next-ventures">
-      <div class="next-card">
-        <span class="name">Venture 002</span>
-        <span class="tag">In development</span>
-      </div>
-      <div class="next-card">
-        <span class="name">Venture 003</span>
-        <span class="tag">Early research</span>
-      </div>
+    <div class="next">
+      <div class="next-card reveal"><strong>Venture 002</strong><span class="mono">In development</span></div>
+      <div class="next-card reveal"><strong>Venture 003</strong><span class="mono">Early research</span></div>
     </div>
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <div class="section-label"><span class="idx">03</span> How we build</div>
-    <div class="manifesto">
-      <h2 class="section-title">The HYGE Innovations way</h2>
-      <div class="manifesto-list">
-        <div class="manifesto-row">
-          <span class="idx">01</span>
-          <div>
-            <h4>Start with the hardest problem</h4>
-            <p>We look for infrastructure gaps that are painful, structural, and unglamorous — the kind other builders avoid because they're hard, not because they're unimportant.</p>
-          </div>
-        </div>
-        <div class="manifesto-row">
-          <span class="idx">02</span>
-          <div>
-            <h4>Ship lean, ship real</h4>
-            <p>Every venture launches with working product in the hands of real users before it launches with a deck. We build in public, in production, from week one.</p>
-          </div>
-        </div>
-        <div class="manifesto-row">
-          <span class="idx">03</span>
-          <div>
-            <h4>Keep the team close to the code</h4>
-            <p>Our founders and engineers stay hands-on inside every venture. Technical depth is not outsourced — it's how we hold ourselves accountable to the people who use what we build.</p>
-          </div>
-        </div>
-        <div class="manifesto-row">
-          <span class="idx">04</span>
-          <div>
-            <h4>Compound across ventures</h4>
-            <p>What Wheelers learns about payments, trust, and logistics in Lagos becomes the foundation the next HYGE Innovations venture starts from — not from scratch.</p>
-          </div>
-        </div>
-      </div>
+<section id="how">
+  <div class="wrap how">
+    <div>
+      <p class="label mono reveal"><b>03</b>How we build</p>
+      <h2 class="reveal">The HYGE <em>way</em>.</h2>
+    </div>
+    <div class="rows">
+      <div class="row reveal"><span class="idx">01</span><div><h3>Start with the hardest problem</h3><p>We go after the gaps that are painful, structural and unglamorous: the ones others avoid because they're hard, not because they don't matter.</p></div></div>
+      <div class="row reveal"><span class="idx">02</span><div><h3>Ship lean, ship real</h3><p>Every venture reaches real people with a working product before it reaches a pitch deck. We build in production from week one.</p></div></div>
+      <div class="row reveal"><span class="idx">03</span><div><h3>Stay close to the code</h3><p>Our founders and engineers stay hands-on in every venture. Technical depth isn't outsourced; it's how we stay accountable to the people who use what we build.</p></div></div>
+      <div class="row reveal"><span class="idx">04</span><div><h3>Compound across ventures</h3><p>What Wheelers learns about payments, trust and logistics in Lagos becomes the foundation the next HYGE venture starts from.</p></div></div>
     </div>
   </div>
 </section>
 
-<section id="contact" class="cta-section">
+<section id="contact" class="contact">
   <div class="wrap">
-    <h2 class="section-title">Building something that moves Africa forward?</h2>
-    <p class="lead">We're always in conversation with operators, engineers, and partners who think about infrastructure the way we do. Reach out.</p>
-    <div class="cta-actions">
-      <a href="mailto:admin@hygeinnovations.com" class="btn btn-solid">admin@hygeinnovations.com</a>
-      <a href="https://www.wheelersng.com/" target="_blank" rel="noopener" class="btn btn-ghost">See Wheelers in action →</a>
+    <p class="label mono reveal"><b>04</b>Contact</p>
+    <h2 class="reveal">Building something that moves Africa forward? Let's talk.</h2>
+    <p class="lede reveal">We're always talking with operators, engineers and partners who think about infrastructure the way we do.</p>
+    <div class="contact-grid">
+      <a class="c-card reveal" href="mailto:admin@hygeinnovations.com"><span class="mono">Email</span><strong>admin@hygeinnovations.com</strong></a>
+      <a class="c-card reveal" href="tel:+2348072675072"><span class="mono">Phone</span><strong>+234 807 267 5072</strong></a>
+      <div class="c-card reveal"><span class="mono">Office</span><strong>35 Alh Olakunle Street, off Omilani Street, Ijeshatedo, Lagos</strong></div>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="logo-mark"><span class="dot"></span>HYGE INNOVATIONS LTD</div>
-        <p>A Lagos-based venture builder creating the mobility, financial, and digital infrastructure Africa runs on.</p>
+    <div class="foot-top">
+      <div>
+        <a class="brand" href="#top" aria-label="HYGE Innovations home">
+          <img src="assets/hyge-mark.svg" alt="">
+          <span class="brand-text"><span class="brand-name">HYGE</span><span class="brand-sub">INNOVATIONS</span></span>
+        </a>
+        <p class="foot-blurb">A Lagos venture builder creating the mobility, payments and digital infrastructure Africa runs on.</p>
       </div>
-      <div class="footer-cols">
-        <div class="footer-col">
-          <h5>Ventures</h5>
-          <a href="https://www.wheelersng.com/" target="_blank" rel="noopener">Wheelers</a>
-          <span>Venture 002 — soon</span>
-        </div>
-        <div class="footer-col">
-          <h5>Company</h5>
-          <a href="#approach">Approach</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="footer-col">
-          <h5>Get in touch</h5>
-          <a href="mailto:admin@hygeinnovations.com">admin@hygeinnovations.com</a>
-          <a href="tel:+2348072675072">+234 807 267 5072</a>
-          <span>35 Alh Olakunle Street,<br>off Omilani Street, Ijeshatedo,<br>Lagos, Nigeria</span>
-        </div>
+      <div class="foot-cols">
+        <div class="foot-col"><h4 class="mono">Ventures</h4><a href="https://www.wheelersng.com/" target="_blank" rel="noopener">Wheelers</a><span>Venture 002, soon</span></div>
+        <div class="foot-col"><h4 class="mono">Company</h4><a href="#thesis">Thesis</a><a href="#how">How we build</a><a href="#contact">Contact</a></div>
+        <div class="foot-col"><h4 class="mono">Reach us</h4><a href="mailto:admin@hygeinnovations.com">admin@hygeinnovations.com</a><a href="tel:+2348072675072">+234 807 267 5072</a></div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 HYGE Innovations Limited. All rights reserved.</span>
-      <span>RC 9626054 — Registered in Nigeria</span>
+    <div class="foot-bottom mono">
+      <span>© 2026 HYGE Innovations Limited</span>
+      <span>RC 9626054 · Registered in Nigeria</span>
     </div>
   </div>
 </footer>
 
+<script>
+  // Sections slide in as they come into view; everything shows at once without this.
+  (function () {
+    var items = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { items.forEach(function (n) { n.classList.add('in'); }); return; }
+    var seen = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('in');
+        seen.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    items.forEach(function (n, i) { n.style.transitionDelay = (i % 3) * 80 + 'ms'; seen.observe(n); });
+  })();
+</script>
 </body>
 </html>
